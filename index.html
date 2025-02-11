@@ -7,12 +7,21 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0; /* Remove default body margin */
+            height: 100vh; /* Make the body take up the full viewport height */
+            display: flex; /* Use Flexbox */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            background-color: #f7f7f7; /* Optional: Add a light background color */
         }
         .container {
             max-width: 600px;
-            margin: 0 auto;
+            width: 100%; /* Ensure it takes up the full width up to max-width */
+            padding: 20px; /* Add some padding */
             text-align: center;
+            background-color: white; /* Optional: Add a white background */
+            border-radius: 10px; /* Optional: Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
         }
         input[type="email"] {
             width: 100%;
@@ -31,6 +40,9 @@
         }
         button:hover {
             background-color: #cc0000;
+        }
+        #responseMessage {
+            margin-top: 15px; /* Add some space above the response message */
         }
     </style>
 </head>
