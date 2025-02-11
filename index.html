@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete My Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Delete My Data</h1>
+        <p>Enter your email address to request deletion of your data.</p>
+        <form id="deleteForm">
+            <input type="email" id="email" name="email" placeholder="Your email address" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="responseMessage"></p>
+    </div>
+
+    <script>
+        document.getElementById('deleteForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const responseMessage = document.getElementById('responseMessage');
+
+            fetch('https://dolphin-app-zeoxd.ondigitalocean.app/delete-data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    responseMessage.textContent = 'Your data deletion request has been submitted.';
+                    responseMessage.style.color = 'green';
+                } else {
+                    responseMessage.textContent = 'An error occurred. Please try again.';
+                    responseMessage.style.color = 'red';
+                }
+            })
+            .catch(error => {
+                responseMessage.textContent = 'An error occurred. Please try again.';
+                responseMessage.style.color = 'red';
+            });
+        });
+    </script>
+</body>
+</html>
