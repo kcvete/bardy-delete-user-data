@@ -60,18 +60,16 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log('data: ', data);
-                if (data.stats === 'success') {
+                if (data.status === 'success') {
                     responseMessage.textContent = 'Your data deletion request has been submitted.';
                     responseMessage.style.color = 'green';
                 } else {
-                    responseMessage.textContent = 'An error occurred. Please try again. 1';
+                    responseMessage.textContent = 'An error occurred. Please try again.';
                     responseMessage.style.color = 'red';
                 }
             })
             .catch(error => {
-                console.log('error: ', error);
-                responseMessage.textContent = 'An error occurred. Please try again. 1';
+                responseMessage.textContent = 'An error occurred. Please try again.';
                 responseMessage.style.color = 'red';
             });
         });
