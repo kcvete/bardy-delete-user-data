@@ -7,24 +7,24 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0; /* Remove default body margin */
-            height: 100vh; /* Make the body take up the full viewport height */
-            display: flex; /* Use Flexbox */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            background-color: #f7f7f7; /* Optional: Add a light background color */
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f7f7;
         }
         .container {
             max-width: 600px;
-            width: 100%; /* Ensure it takes up the full width up to max-width */
-            padding: 20px; /* Add some padding */
+            width: 90%; /* Use percentage for better responsiveness */
+            padding: 30px; /* Increased padding */
             text-align: center;
-            background-color: white; /* Optional: Add a white background */
-            border-radius: 10px; /* Optional: Add rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         input[type="email"] {
-            width: 100%;
+            width: calc(100% - 20px); /* Adjust width to account for padding */
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -37,12 +37,13 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin-top: 10px; /* Add margin to separate from input */
         }
         button:hover {
             background-color: #cc0000;
         }
         #responseMessage {
-            margin-top: 15px; /* Add some space above the response message */
+            margin-top: 15px;
         }
     </style>
 </head>
