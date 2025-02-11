@@ -65,13 +65,13 @@
                     responseMessage.textContent = 'Your data deletion request has been submitted.';
                     responseMessage.style.color = 'green';
                 } else {
-                    responseMessage.textContent = 'An error occurred. Please try again.';
+                    responseMessage.textContent = 'An error occurred. Please try again. 1';
                     responseMessage.style.color = 'red';
                 }
             })
             .catch(error => {
                 console.log('error: ', error);
-                responseMessage.textContent = 'An error occurred. Please try again.';
+                responseMessage.textContent = 'An error occurred. Please try again. 1';
                 responseMessage.style.color = 'red';
             });
         });
