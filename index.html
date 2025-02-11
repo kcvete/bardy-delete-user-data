@@ -60,7 +60,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                if (data.success) {
+                if (data.stats === 'success') {
                     responseMessage.textContent = 'Your data deletion request has been submitted.';
                     responseMessage.style.color = 'green';
                 } else {
